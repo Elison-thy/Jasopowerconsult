@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn about JASO Power Consult Limited, its history, mission, vision and electrical, solar and technical services in Uganda.">
+  <meta name="theme-color" content="#166534">
+  <title>About JASO Power Consult Limited | Quality Is Our Guarantee</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  
+  <style>
+    /* =========================================
+       GLOBAL & VARIABLES
+       ========================================= */
+    :root {
+      --green: #166534;
+      --green-dark: #14532d;
+      --green-light: #15803d;
+      --orange: #f97316;
+      --orange-hover: #ea580c;
+      --ink: #17211b;
+      --muted: #647067;
+      --cream: #f6f8f6;
+      --white: #fff;
+      --line: #e1e8e2;
+      --shadow: 0 20px 55px rgba(20,83,45,.10);
+      --radius: 22px;
+      --transition: 0.3s ease;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    
+    body {
+      font-family: "DM Sans", sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--ink);
+      background: var(--white);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: "Manrope", sans-serif;
+      line-height: 1.15;
+      letter-spacing: -0.035em;
+      color: #183b26;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { width: 100%; display: block; object-fit: cover; }
+    button, input, textarea, select { font: inherit; }
+    
+    ::selection { background: #fed7aa; color: var(--green-dark); }
+    
+    a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+      outline: 3px solid var(--orange);
+      outline-offset: 3px;
+    }
+
+    .container { width: min(1180px, calc(100% - 40px)); margin: auto; }
+
+    /* UTILITIES */
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 9px;
+      color: var(--green-light); font-size: 0.75rem; font-weight: 800;
+      letter-spacing: 0.15em; text-transform: uppercase;
+    }
+    .eyebrow::before { content: ""; width: 25px; height: 2px; background: var(--orange); }
+    
+    .section-head { max-width: 720px; margin-bottom: 40px; }
+    .section-head h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); margin: 14px 0; }
+    .section-head p { color: var(--muted); font-size: 1.05rem; }
+
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      padding: 14px 24px; border-radius: 9px; border: 1px solid transparent;
+      font-weight: 800; font-size: 0.95rem; cursor: pointer; transition: var(--transition);
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-gold { background: var(--orange); color: var(--white); box-shadow: 0 9px 22px rgba(249,115,22,0.2); }
+    .btn-gold:hover { background: var(--orange-hover); }
+    .btn-green { background: var(--green); color: var(--white); }
+    .btn-green:hover { background: var(--green-dark); }
+
+    /* =========================================
+       HEADER & NAVIGATION
+       ========================================= */
+    .topbar { background: #103c24; color: #e8f5ec; font-size: 0.8rem; }
+    .topbar-inner { min-height: 42px; display: flex; align-items: center; justify-content: space-between; }
+    .topbar i { color: #fdba74; margin-right: 7px; }
+    .topbar-info { display: flex; gap: 20px; }
+    .topbar a { color: #fdba74; font-weight: 600; }
+    .topbar a:hover { color: var(--white); }
+
+    header {
+      position: sticky; top: 0; z-index: 1000;
+      background: rgba(255,255,255,0.96); backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--line); box-shadow: 0 4px 24px rgba(15,40,22,.035);
+    }
+    .nav-wrap { min-height: 80px; display: flex; align-items: center; justify-content: space-between; }
+    
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .brand-mark {
+      width: 48px; height: 48px; border-radius: 14px;
+      background: linear-gradient(145deg, var(--green), var(--green-dark));
+      color: #fed7aa; display: grid; place-items: center; font-size: 1.3rem;
+      box-shadow: 0 8px 18px rgba(20,83,45,0.15);
+    }
+    .brand-name { font-family: "Manrope", sans-serif; font-weight: 800; font-size: 1rem; line-height: 1.15; color: #183b26; }
+    .brand-name small { display: block; color: #77837a; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; margin-top: 3px; }
+
+    .nav-links { display: flex; align-items: center; gap: 25px; font-size: 0.9rem; font-weight: 700; }
+    .nav-links > a:not(.nav-cta) { color: #3e4c42; position: relative; padding: 8px 0; }
+    .nav-links > a:not(.nav-cta)::after {
+      content: ""; position: absolute; bottom: 0; left: 0; width: 0; height: 3px;
+      background: var(--orange); border-radius: 4px; transition: var(--transition);
+    }
+    .nav-links > a:hover::after, .nav-links > a.active::after { width: 100%; }
+    .nav-cta { padding: 12px 20px; border-radius: 9px; background: var(--green); color: var(--white); }
+    .nav-cta:hover { background: var(--green-dark); }
+    
+    .menu-toggle {
+      display: none; width: 44px; height: 44px; border: 0; border-radius: 12px;
+      background: var(--green); color: var(--white); font-size: 1.2rem; cursor: pointer;
+    }
+
+    /* =========================================
+       PAGE HERO (Background Image with Overlay)
+       ========================================= */
+    .page-hero {
+      position: relative; 
+      min-height: 480px; 
+      display: flex; 
+      align-items: center;
+      color: var(--white); 
+      background: #103c24; 
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: ""; position: absolute; inset: 0; z-index: -1;
+      background: linear-gradient(90deg, rgba(8,39,22,0.85) 0%, rgba(16,60,36,0.7) 50%, rgba(16,60,36,0.4) 100%),
+                  url("https://images.unsplash.com/photo-1497440001374-f26997328c1b?auto=format&fit=crop&w=2000&q=85") center/cover;
+    }
+    .page-hero .container { padding: 90px 0; position: relative; z-index: 1; }
+    .page-hero .eyebrow { color: #fdba74; }
+    
+    .page-hero h1 { 
+      font-size: clamp(2.8rem, 6vw, 4.8rem); 
+      color: var(--white); 
+      margin: 20px 0; 
+      line-height: 1.1; 
+      text-shadow: 0 4px 15px rgba(0,0,0,0.5); 
+    }
+    .page-hero h1 span { color: #fdba74; }
+    .page-hero p { 
+      max-width: 700px; 
+      color: #f0f7f2; 
+      font-size: 1.15rem; 
+      line-height: 1.8; 
+      text-shadow: 0 2px 10px rgba(0,0,0,0.4); 
+    }
+    .breadcrumbs { 
+      display: flex; align-items: center; gap: 10px; 
+      font-size: 0.85rem; color: #d0e2d4; 
+      margin-top: 30px; text-shadow: 0 2px 5px rgba(0,0,0,0.5); 
+    }
+    .breadcrumbs a { color: #fdba74; font-weight: 700; }
+
+    /* =========================================
+       WHO WE ARE (STORY) SECTION
+       ========================================= */
+    .story-section {
+      position: relative;
+      padding: 100px 0;
+      background: url("https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=2000&q=85") center/cover fixed;
+      color: var(--white);
+    }
+    .story-section::before {
+      content: ""; position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(10,45,25,0.92) 0%, rgba(16,60,36,0.85) 100%);
+      z-index: 1;
+    }
+    .story-section .container { position: relative; z-index: 2; }
+
+    .story-content {
+      max-width: 850px;
+      margin: 0 auto;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .story-content .eyebrow { color: #fdba74; }
+    .story-content h2 {
+      color: var(--white);
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      margin: 20px 0;
+      line-height: 1.2;
+    }
+    .story-content p {
+      color: #e3eee5;
+      font-size: 1.1rem;
+      line-height: 1.85;
+      margin-bottom: 20px;
+      max-width: 780px;
+    }
+
+    .story-features {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 30px;
+      width: 100%;
+      max-width: 700px;
+      text-align: left;
+    }
+    .story-feature-item {
+      display: flex; align-items: center; gap: 12px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(8px);
+      padding: 16px 20px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.15);
+      font-weight: 700; font-size: 0.95rem;
+    }
+    .story-feature-item i { color: var(--orange); font-size: 1.2rem; }
+
+    /* =========================================
+       IDENTITY STRIP
+       ========================================= */
+    .identity-strip { background: var(--cream); border-y: 1px solid var(--line); padding: 60px 0; }
+    .identity-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .identity-item {
+      display: flex; gap: 16px; align-items: flex-start; padding: 24px;
+      background: var(--white); border: 1px solid var(--line); border-radius: 16px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+    }
+    .identity-item i {
+      flex: 0 0 46px; width: 46px; height: 46px; border-radius: 12px;
+      display: grid; place-items: center; background: #eaf5ed; color: var(--green);
+      font-size: 1.2rem;
+    }
+    .identity-item h3 { font-size: 1.05rem; color: #21452d; margin-bottom: 6px; }
+    .identity-item p { font-size: 0.9rem; color: var(--muted); line-height: 1.6; }
+
+    /* =========================================
+       HISTORY / TIMELINE
+       ========================================= */
+    .history-head { max-width: 720px; margin-bottom: 45px; }
+    .timeline { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .history-item {
+      position: relative; border: 1px solid var(--line); border-radius: 16px;
+      padding: 30px 30px 30px 85px; background: var(--white);
+      box-shadow: 0 8px 24px rgba(23,59,36,0.04); transition: var(--transition);
+    }
+    .history-item:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: #a9d4b3; }
+    .history-item .year {
+      position: absolute; left: 25px; top: 28px; width: 42px; height: 42px;
+      border-radius: 12px; background: #eaf5ed; color: var(--green);
+      display: grid; place-items: center; font-weight: 800; font-size: 0.8rem;
+    }
+    .history-item h3 { font-size: 1.15rem; margin-bottom: 10px; }
+    .history-item p { font-size: 0.95rem; color: var(--muted); line-height: 1.7; margin: 0; }
+
+    /* =========================================
+       MISSION SECTION (Uniform Orange)
+       ========================================= */
+    .mission-section { background: linear-gradient(130deg, #103c24, #14532d); color: var(--white); }
+    .mission-section .eyebrow { color: #fdba74; }
+    .mission-section .section-head h2 { color: var(--white); }
+    .mission-section .section-head p { color: #d5e5d8; }
+    
+    .mission-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .mission-card {
+      padding: 35px 30px; border: 1px solid var(--orange); border-radius: 16px;
+      background: var(--orange); transition: transform 0.3s ease;
+    }
+    .mission-card:hover { transform: translateY(-5px); }
+    .mission-card .mission-icon {
+      width: 55px; height: 55px; display: grid; place-items: center; border-radius: 14px;
+      background: var(--white); color: var(--orange); font-size: 1.4rem; margin-bottom: 24px;
+    }
+    .mission-card h2 { font-size: 1.4rem; color: var(--white); margin: 0 0 15px; }
+    .mission-card p { color: var(--white); font-size: 0.95rem; line-height: 1.7; margin: 0; opacity: 0.95; }
+
+    /* =========================================
+       FOUNDERS & EXECUTIVES
+       ========================================= */
+    .founders { background: var(--cream); }
+    .founders-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+    
+    .founder-card {
+      display: flex; flex-direction: column; align-items: center; text-align: center;
+      padding: 35px 20px 30px; background: var(--white);
+      border: 1px solid var(--line); border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(23,59,36,0.05); transition: var(--transition);
+    }
+    .founder-card:hover { transform: translateY(-6px); box-shadow: var(--shadow); border-color: #a9d4b3; }
+    
+    .founder-photo {
+      width: 140px; height: 140px; border-radius: 50%; overflow: hidden;
+      border: 5px solid var(--white); box-shadow: 0 0 0 3px var(--orange), 0 14px 30px rgba(23,59,36,0.1);
+      margin-bottom: 22px; background: #eaf5ed; display: grid; place-items: center;
+    }
+    .founder-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+    
+    .founder-card h3 { font-size: 1.15rem; margin-bottom: 8px; line-height: 1.3; }
+    .founder-role {
+      display: inline-block; font-size: 0.75rem; font-weight: 800;
+      letter-spacing: 0.1em; text-transform: uppercase; color: var(--orange); line-height: 1.5;
+    }
+    .founder-role small { display: block; font-size: 0.85em; letter-spacing: 0.05em; color: var(--muted); text-transform: none; margin-top: 4px; }
+
+    /* =========================================
+       CAPABILITIES
+       ========================================= */
+    .service-overview { background: var(--white); }
+    .service-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .service-list-item {
+      display: flex; align-items: center; gap: 12px; background: var(--white);
+      border: 1px solid var(--line); border-radius: 12px; padding: 18px 20px;
+      font-weight: 700; color: #284532; font-size: 0.95rem; transition: var(--transition);
+    }
+    .service-list-item:hover { border-color: #a9d4b3; box-shadow: 0 8px 20px rgba(23,59,36,0.06); }
+    .service-list-item i { color: var(--orange); width: 24px; text-align: center; font-size: 1.1rem; }
+    
+    .leadership-note {
+      margin-top: 40px; border-left: 4px solid var(--orange); background: var(--cream);
+      padding: 24px 28px; border-radius: 0 12px 12px 0; color: var(--muted); line-height: 1.8;
+    }
+    .leadership-note strong { color: #183b26; }
+
+    /* =========================================
+       CTA BAND
+       ========================================= */
+    .about-cta { padding: 0 0 90px; background: var(--white); }
+    .cta-inner {
+      display: flex; align-items: center; justify-content: space-between; gap: 30px;
+      padding: 45px 50px; border-radius: 20px; background: #eaf4ec;
+      border: 1px solid #d5e6d8; color: #183b26;
+    }
+    .cta-inner h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); margin-bottom: 10px; }
+    .cta-inner p { color: #586d5d; font-size: 1.05rem; }
+    .cta-inner .btn { flex-shrink: 0; }
+
+    /* =========================================
+       FOOTER
+       ========================================= */
+    footer { background: #103c24; color: #d3e0d7; padding: 70px 0 30px; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 40px; padding-bottom: 45px; }
+    .footer-about .brand-name { color: var(--white); }
+    .footer-about .brand-name small { color: #b8cdbd; }
+    .footer-about .brand-mark { background: var(--orange); color: var(--white); box-shadow: none; }
+    .footer-about p { font-size: 0.9rem; color: #b8cdbd; margin: 20px 0; line-height: 1.7; max-width: 300px; }
+    
+    .socials { display: flex; gap: 10px; }
+    .socials a {
+      display: grid; place-items: center; width: 40px; height: 40px;
+      border: 1px solid #477354; border-radius: 10px; transition: var(--transition);
+    }
+    .socials a:hover { background: var(--orange); border-color: var(--orange); color: var(--white); }
+    
+    .footer-col h3 { color: var(--white); font-size: 1rem; margin-bottom: 20px; letter-spacing: 0.02em; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { font-size: 0.9rem; margin: 12px 0; color: #b8cdbd; }
+    .footer-col a:hover { color: var(--orange); }
+    
+    .footer-bottom {
+      border-top: 1px solid #3b6948; padding-top: 25px;
+      display: flex; justify-content: space-between; gap: 15px;
+      font-size: 0.8rem; color: #9eb1a4;
+    }
+
+    /* =========================================
+       BACK TO TOP BUTTON
+       ========================================= */
+    .back-top {
+      position: fixed; right: 25px; bottom: 25px; width: 48px; height: 48px;
+      border: 0; border-radius: 12px; background: var(--orange); color: var(--white);
+      box-shadow: var(--shadow); cursor: pointer; z-index: 900;
+      opacity: 0; pointer-events: none; transform: translateY(10px); transition: var(--transition);
+    }
+    .back-top.visible { opacity: 1; pointer-events: auto; transform: none; }
+    .back-top:hover { background: var(--orange-hover); }
+
+    /* =========================================
+       ANIMATIONS
+       ========================================= */
+    .reveal { opacity: 0; transform: translateY(25px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.in-view { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+      .btn:hover, .mission-card:hover, .founder-card:hover, .history-item:hover { transform: none; }
+      .story-section { background-attachment: scroll; }
+    }
+
+    /* =========================================
+       RESPONSIVE DESIGN
+       ========================================= */
+    @media (max-width: 1024px) {
+      .founders-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+      .service-list { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .timeline { grid-template-columns: 1fr; }
+      .mission-grid { grid-template-columns: 1fr 1fr; }
+      .mission-grid > :last-child { grid-column: span 2; }
+      .story-section { background-attachment: scroll; } 
+    }
+
+    @media (max-width: 850px) {
+      .identity-grid { grid-template-columns: 1fr; }
+      .cta-inner { flex-direction: column; text-align: center; padding: 35px 25px; }
+      .cta-inner .btn { width: 100%; }
+      .topbar-info span:nth-child(2) { display: none; }
+    }
+
+    @media (max-width: 768px) {
+      /* Navigation */
+      .menu-toggle { display: grid; place-items: center; }
+      .nav-links {
+        display: none; position: absolute; top: 100%; left: 0; right: 0;
+        background: var(--white); padding: 20px 25px; border-top: 1px solid var(--line);
+        box-shadow: 0 18px 30px rgba(23,59,36,0.1); flex-direction: column;
+        align-items: stretch; gap: 8px;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links > a:not(.nav-cta) { padding: 12px 5px; font-size: 1rem; border-bottom: 1px solid var(--cream); }
+      .nav-links > a:not(.nav-cta)::after { display: none; }
+      .nav-cta { text-align: center; margin-top: 10px; }
+      
+      /* Hero */
+      .page-hero { min-height: 380px; }
+      .page-hero h1 { font-size: 2.5rem; }
+      .page-hero p { font-size: 1rem; }
+      .page-hero .container { padding: 60px 0; }
+      
+      /* Sections */
+      section { padding: 60px 0; }
+      .story-section { padding: 70px 0; }
+      .story-features { grid-template-columns: 1fr; }
+      
+      /* Grids */
+      .founders-grid { grid-template-columns: 1fr; }
+      .mission-grid { grid-template-columns: 1fr; }
+      .mission-grid > :last-child { grid-column: span 1; }
+      .service-list { grid-template-columns: 1fr; }
+      .history-item { padding: 25px 25px 25px 75px; }
+      .history-item .year { left: 20px; top: 25px; width: 38px; height: 38px; }
+      
+      /* Footer */
+      .footer-grid { grid-template-columns: 1fr; gap: 35px; }
+      .footer-bottom { flex-direction: column; text-align: center; gap: 10px; }
+    }
+
+    @media (max-width: 480px) {
+      .container { width: calc(100% - 30px); }
+      .brand-mark { width: 40px; height: 40px; font-size: 1.1rem; border-radius: 10px; }
+      .brand-name { font-size: 0.85rem; }
+      .page-hero h1 { font-size: 2.1rem; }
+      .section-head h2 { font-size: 1.7rem; }
+      .founder-photo { width: 120px; height: 120px; }
+      .cta-inner { padding: 30px 20px; }
+      .back-top { right: 15px; bottom: 15px; width: 40px; height: 40px; }
+    }
+  </style>
+</head>
+<body id="top">
+
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="topbar-info">
+        <span><i class="fa-solid fa-bolt"></i>Quality is our Guarantee</span>
+        <span><i class="fa-solid fa-location-dot"></i> Serving Lira · Gulu · Soroti, Uganda</span>
+      </div>
+      <div class="topbar-social">
+        <a href="home.html#contact">Talk to our team <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html" aria-label="JASO Power Consult home">
+        <span class="brand-mark"><i class="fa-solid fa-bolt-lightning"></i></span>
+        <span class="brand-name">JASO POWER<small>Consult Limited</small></span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a class="active" href="about.html">About</a>
+        <a href="#services">Services</a>
+        <a href="#facts">Our Facts</a>
+        <a href="#gallery">Gallery</a>
+        <a href="£locations">Locations</a>
+        <a href="contact" class="nav-cta">Get a quote <i class="fa-solid fa-arrow-right"></i></a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- PAGE HERO (Background Image with Overlay) -->
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">Who we are · Our story · Our purpose</span>
+        <h1>Built on hard work.<br><span>Committed to quality.</span></h1>
+        <p>Discover the story, purpose and technical services of JASO Power Consult Limited — a Ugandan company shaped by hard work and guided by the promise: “Quality is our Guarantee.”</p>
+        <div class="breadcrumbs">
+          <a href="index.html">Home</a>
+          <i class="fa-solid fa-chevron-right" style="font-size:0.7em;"></i>
+          <span>About JASO</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHO WE ARE (STORY) -->
+    <section class="story-section" id="story">
+      <div class="container">
+        <div class="story-content reveal">
+          <span class="eyebrow">About the company</span>
+          <h2>Practical electrical and solar solutions, rooted in hard work.</h2>
+          <p>JASO Power Consult Limited began in 2016 as an electrical shop at Caravan Building, Plot 2B, Maruzi Road, opposite the UMEME Office in Lira City, Uganda.</p>
+          <p>The name “JASO” reflects the Kiswahili word for “sweat” — the clear, salty liquid produced through hard work. The name also comes from Jasper Ojok, the company’s Managing Director, Jasper George Ojok. It expresses the founder’s belief that hard work is essential to achieving what one desires.</p>
+          <p>From its beginnings as an electrical shop, the company developed its retail and technical services, later establishing JASO Electric Mart in Lira and expanding to Gulu in 2022.</p>
+          
+          <div class="story-features">
+            <div class="story-feature-item"><i class="fa-solid fa-circle-check"></i> Started in 2016</div>
+            <div class="story-feature-item"><i class="fa-solid fa-circle-check"></i> Incorporated in 2017</div>
+            <div class="story-feature-item"><i class="fa-solid fa-circle-check"></i> Electrical and solar services</div>
+            <div class="story-feature-item"><i class="fa-solid fa-circle-check"></i> Retail, supply and installation</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- IDENTITY STRIP -->
+    <section class="identity-strip">
+      <div class="container identity-grid">
+        <article class="identity-item reveal">
+          <i class="fa-solid fa-calendar-check"></i>
+          <div>
+            <h3>Established in 2016</h3>
+            <p>Started as an electrical shop at Caravan Building on Maruzi Road in Lira City.</p>
+          </div>
+        </article>
+        <article class="identity-item reveal">
+          <i class="fa-solid fa-file-signature"></i>
+          <div>
+            <h3>Incorporated in Uganda</h3>
+            <p>Officially incorporated on 23 May 2017 under the Companies Act 2012.</p>
+          </div>
+        </article>
+        <article class="identity-item reveal">
+          <i class="fa-solid fa-location-dot"></i>
+          <div>
+            <h3>Growing footprint</h3>
+            <p>Opened JASO Electric Mart in Lira in 2019 and officially expanded to Gulu in October 2022.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- HISTORY / TIMELINE -->
+    <section class="history-section" id="history">
+      <div class="container">
+        <div class="history-head reveal">
+          <span class="eyebrow">Our journey</span>
+          <h2>From a local electrical shop to a growing technical services company.</h2>
+          <p>Key milestones from the JASO Power Consult Limited company profile.</p>
+        </div>
+        <div class="timeline">
+          <article class="history-item reveal">
+            <span class="year">2016</span>
+            <h3>The beginning of JASO</h3>
+            <p>JASO began as an electrical shop at Caravan Building, Plot 2B, Maruzi Road, opposite the UMEME Office in Lira City. The name was chosen to represent sweat, effort and the value of hard work.</p>
+          </article>
+          <article class="history-item reveal">
+            <span class="year">2017</span>
+            <h3>Company incorporation</h3>
+            <p>On 23 May 2017, JASO Power Consult Limited was incorporated in Uganda as a company limited by shares under Section 18(3) of the Companies Act 2012. The company profile lists registration number 80020000259078.</p>
+          </article>
+          <article class="history-item reveal">
+            <span class="year">2019</span>
+            <h3>JASO Electric Mart opens</h3>
+            <p>On 10 December 2019, the company opened JASO Electric Mart at Olet-Elyak Building, Plot 4, Maruzi Road, next to Olang Building, Lira City West Division. The profile identifies this as the main office.</p>
+          </article>
+          <article class="history-item reveal">
+            <span class="year">2020</span>
+            <h3>Working through the COVID-19 period</h3>
+            <p>The company profile describes the challenges of operating during the COVID-19 era and credits the Board of Directors, management, sales team and technical personnel for helping the business continue through that period.</p>
+          </article>
+          <article class="history-item reveal">
+            <span class="year">2022</span>
+            <h3>Expansion to Gulu</h3>
+            <p>On 24 October 2022, JASO officially opened another branch along Awere Road, opposite Gulu Main Market, Western Gate, next to Pentagon Suppliers, Gulu City. The branch provides sales, supply, installation, line construction and maintenance of electrical and solar appliances.</p>
+          </article>
+          <article class="history-item reveal">
+            <span class="year"><i class="fa-solid fa-arrow-up-right-dots"></i></span>
+            <h3>Continuing the work</h3>
+            <p>JASO’s stated service areas include domestic wiring, electrical accessories, industrial and line construction, solar systems, installation, maintenance, consultancy, fabrication and technical training.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- MISSION & VISION -->
+    <section class="mission-section" id="mission">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">What guides us</span>
+          <h2>Our mission, vision and promise.</h2>
+          <p>These statements are drawn from the company profile supplied for the website.</p>
+        </div>
+        <div class="mission-grid">
+          <article class="mission-card reveal">
+            <div class="mission-icon"><i class="fa-solid fa-bullseye"></i></div>
+            <h2>Our Mission</h2>
+            <p>To sustainably and equitably provide cost-effective, safe and reliable electrical and solar products and services to achieve long-term stable growth in global technology.</p>
+          </article>
+          <article class="mission-card reveal">
+            <div class="mission-icon"><i class="fa-solid fa-eye"></i></div>
+            <h2>Our Vision</h2>
+            <p>To be a leading, world-class provider in electrical engineering and solar installation in Uganda through research and innovation.</p>
+          </article>
+          <article class="mission-card reveal">
+            <div class="mission-icon"><i class="fa-solid fa-award"></i></div>
+            <h2>Our Motto</h2>
+            <p>“Quality is our Guarantee.” This is the promise at the heart of the company’s identity and service approach.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOUNDERS & EXECUTIVES -->
+    <section class="founders" id="founders">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Our Leadership</span>
+          <h2>The people behind JASO.</h2>
+          <p>The board of directors and management team guiding JASO Power Consult Limited with a commitment to quality and hard work.</p>
+        </div>
+        
+        <div class="founders-grid">
+          <article class="founder-card reveal">
+            <div class="founder-photo">
+              <img src="images/oron-martin.jpg" alt="Oron Martin Lulugar, Chairman Board" loading="lazy">
+            </div>
+            <h3>Oron Martin Lulugar</h3>
+            <span class="founder-role">Chairman Board</span>
+          </article>
+
+          <article class="founder-card reveal">
+            <div class="founder-photo">
+              <img src="images/ojok-jasper.jpg" alt="Ojok Jasper George, Managing Director" loading="lazy">
+            </div>
+            <h3>Ojok Jasper George</h3>
+            <span class="founder-role">Managing Director</span>
+          </article>
+
+          <article class="founder-card reveal">
+            <div class="founder-photo">
+              <img src="images/aero-jeroline.jpg" alt="Aero Jeroline, Board Member in charge of Administration" loading="lazy">
+            </div>
+            <h3>Aero Jeroline</h3>
+            <span class="founder-role">Board Member<br><small>In charge of Administration</small></span>
+          </article>
+
+          <article class="founder-card reveal">
+            <div class="founder-photo">
+              <img src="images/okello-james.jpg" alt="Okello James, Board Member in charge of Finance" loading="lazy">
+            </div>
+            <h3>Okello James</h3>
+            <span class="founder-role">Board Member<br><small>In charge of Finance</small></span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CAPABILITIES -->
+    <section class="service-overview" id="capabilities">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Our capabilities</span>
+          <h2>Electrical, solar and technical services.</h2>
+          <p>JASO Power Consult Limited deals in the following service areas, as listed in the company profile.</p>
+        </div>
+        
+        <div class="service-list">
+          <div class="service-list-item reveal"><i class="fa-solid fa-house-chimney"></i> Domestic wiring</div>
+          <div class="service-list-item reveal"><i class="fa-solid fa-plug"></i> Electrical accessories — retail and wholesale</div>
+          <div class="service-list-item reveal"><i class="fa-solid fa-tower-broadcast"></i> Industrial and line construction up to 33KVA</div>
+          <div class="service-list-item reveal"><i class="fa-solid fa-solar-panel"></i> Solar PV systems</div>
+          <div class="service-list-item reveal"><i class="fa-solid fa-faucet-drip"></i> Water pump systems</div>
+          <div class="service-list-item reveal"><i class="fa-solid fa-screwdriver-wrench"></i> Installation and maintenance</div>
+          <div class="service-list-item reveal"><i class="fa-solid fa-lightbulb"></i> Solar street lights</div>
+          <div class="service-list-item reveal"><i class="fa-solid fa-video"></i> Camera installation</div>
+          <div class="service-list-item reveal"><i class="fa-solid fa-compass-drafting"></i> Electrical consultancy</div>
+          <div class="service-list-item reveal"><i class="fa-solid fa-gears"></i> Metal fabrication</div>
+          <div class="service-list-item reveal"><i class="fa-solid fa-snowflake"></i> Air conditioner installation and maintenance</div>
+          <div class="service-list-item reveal"><i class="fa-solid fa-engine"></i> Motor installation</div>
+          <div class="service-list-item reveal"><i class="fa-solid fa-graduation-cap"></i> Industrial training</div>
+        </div>
+        
+        <div class="leadership-note reveal">
+          <strong>Leadership and governance:</strong> The company profile names Jasper George Ojok as Managing Director and notes that a Board of Directors was formed in 2019 to support the management of the company’s affairs.
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA BAND -->
+    <section class="about-cta">
+      <div class="container">
+        <div class="cta-inner reveal">
+          <div>
+            <span class="eyebrow" style="margin-bottom:10px;">Let’s work together</span>
+            <h2>Have an electrical or solar project in mind?</h2>
+            <p>Contact JASO Power Consult to discuss your requirements, products or technical service needs.</p>
+          </div>
+          <a class="btn btn-green" href="index.html">Contact JASO <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <a class="brand" href="index.html">
+            <span class="brand-mark"><i class="fa-solid fa-bolt-lightning"></i></span>
+            <span class="brand-name">JASO POWER<small>Consult Limited</small></span>
+          </a>
+          <p>Electrical engineering, solar products, installation and maintenance services in Uganda. Our motto: “Quality is our Guarantee.”</p>
+          <div class="socials">
+            <a href="https://wa.me/256393224863" aria-label="WhatsApp" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="mailto:jasoconsult@gmail.com" aria-label="Email JASO"><i class="fa-regular fa-envelope"></i></a>
+            <a href="index.html#locations" aria-label="Locations"><i class="fa-solid fa-location-dot"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h3>Explore</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About JASO</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#facts">Company facts</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Our services</h3>
+          <ul>
+            <li><a href="#services">Solar PV systems</a></li>
+            <li><a href="#services">Electrical accessories</a></li>
+            <li><a href="#services">Domestic wiring</a></li>
+            <li><a href="#services">Line construction</a></li>
+            <li><a href="#services">Technical consultancy</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Contact</h3>
+          <ul>
+            <li><a href="tel:+256393224863">+256 393 224 863</a></li>
+            <li><a href="tel:+256393256237">+256 393 256 237</a></li>
+            <li><a href="tel:+256393104286">+256 393 104 286</a></li>
+            <li><a href="mailto:jasoconsult@gmail.com">jasoconsult@gmail.com</a></li>
+            <li>Lira · Gulu · Soroti, Uganda</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> JASO Power Consult Limited. All rights reserved.</span>
+        <span>Quality is our Guarantee.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BACK TO TOP -->
+  <button class="back-top" id="backTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    // Mobile Menu Toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    menuToggle.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(open));
+      menuToggle.innerHTML = open ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
+    });
+
+    // Close menu when clicking a link
+    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+    }));
+
+    // Scroll Reveal Animations
+    const revealObserver = new IntersectionObserver(entries => entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        revealObserver.unobserve(entry.target);
+      }
+    }), { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // Back to Top Button
+    const backTop = document.getElementById('backTop');
+    window.addEventListener('scroll', () => backTop.classList.toggle('visible', window.scrollY > 500));
+    backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    // Dynamic Year in Footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
